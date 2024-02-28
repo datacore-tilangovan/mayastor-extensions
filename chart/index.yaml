@@ -1,0 +1,187 @@
+apiVersion: v1
+entries:
+  etcd:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 3.5.6
+    created: "2024-02-28T11:19:33.480910007Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: etcd is a distributed key-value store designed to securely store
+      data across a cluster. etcd is widely used in production on account of its reliability,
+      fault-tolerance and ease of use.
+    digest: 10317dc4abd6cd5ff57df746ee25d6c28d84a30a5dd36fe9cf8ccec4c697ce0a
+    home: https://github.com/bitnami/charts/tree/main/bitnami/etcd
+    icon: https://bitnami.com/assets/stacks/etcd/img/etcd-stack-220x234.png
+    keywords:
+    - etcd
+    - cluster
+    - database
+    - cache
+    - key-value
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: etcd
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/etcd
+    - https://coreos.com/etcd/
+    urls:
+    - https://datacore-tilangovan.github.io/test-pro-chart/charts/etcd-8.6.0.tgz
+    version: 8.6.0
+  jaeger-operator:
+  - apiVersion: v1
+    appVersion: 1.24.0
+    created: "2024-02-28T11:19:33.481603084Z"
+    description: jaeger-operator Helm chart for Kubernetes
+    digest: 1880c0da62b475d22ee2bd2b5bf0565abfa9d3546797a52376e72817f753165e
+    home: https://www.jaegertracing.io/
+    icon: https://www.jaegertracing.io/img/jaeger-icon-reverse-color.svg
+    maintainers:
+    - email: ctadeu@gmail.com
+      name: cpanato
+    - email: batazor111@gmail.com
+      name: batazor
+    name: jaeger-operator
+    sources:
+    - https://github.com/jaegertracing/jaeger-operator
+    urls:
+    - https://datacore-tilangovan.github.io/test-pro-chart/charts/jaeger-operator-2.25.0.tgz
+    version: 2.25.0
+  localpv-provisioner:
+  - apiVersion: v2
+    appVersion: 3.5.0
+    created: "2024-02-28T11:19:33.484684084Z"
+    dependencies:
+    - condition: openebsNDM.enabled
+      name: openebs-ndm
+      repository: https://openebs.github.io/node-disk-manager
+      version: 2.1.0
+    description: Helm chart for OpenEBS Dynamic Local PV. For instructions to install
+      OpenEBS Dynamic Local PV using helm chart, refer to https://openebs.github.io/dynamic-localpv-provisioner/.
+    digest: c8c89fa734b9a94d6daa8729e5064ccde38a3d4d46b85f2bf275e2975812230a
+    home: http://www.openebs.io/
+    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/openebs/icon/color/openebs-icon-color.png
+    keywords:
+    - storage
+    - local
+    - dynamic-localpv
+    maintainers:
+    - email: akhil.mohan@mayadata.io
+      name: akhilerm
+    - email: kiran.mova@mayadata.io
+      name: kiranmova
+    - email: prateek.pandey@mayadata.io
+      name: prateekpandey14
+    name: localpv-provisioner
+    sources:
+    - https://github.com/openebs/dynamic-localpv-provisioner
+    type: application
+    urls:
+    - https://datacore-tilangovan.github.io/test-pro-chart/charts/localpv-provisioner-3.5.0.tgz
+    version: 3.5.0
+  loki-stack:
+  - apiVersion: v1
+    appVersion: v2.6.1
+    created: "2024-02-28T11:19:33.503293289Z"
+    dependencies:
+    - condition: loki.enabled
+      name: loki
+      repository: https://grafana.github.io/helm-charts
+      version: ^2.15.2
+    - condition: promtail.enabled
+      name: promtail
+      repository: https://grafana.github.io/helm-charts
+      version: ^6.7.4
+    - condition: fluent-bit.enabled
+      name: fluent-bit
+      repository: https://grafana.github.io/helm-charts
+      version: ^2.3.0
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: ~6.43.0
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: ~15.5.3
+    - condition: filebeat.enabled
+      name: filebeat
+      repository: https://helm.elastic.co
+      version: ~7.17.1
+    - condition: logstash.enabled
+      name: logstash
+      repository: https://helm.elastic.co
+      version: ~7.17.1
+    description: 'Loki: like Prometheus, but for logs.'
+    digest: b85ff7b74b42b3c10ffe6b69023b8915870e9b9d5cc78fa283c313c85b8d3a03
+    home: https://grafana.com/loki
+    icon: https://raw.githubusercontent.com/grafana/loki/master/docs/sources/logo.png
+    kubeVersion: ^1.10.0-0
+    maintainers:
+    - email: lokiproject@googlegroups.com
+      name: Loki Maintainers
+    name: loki-stack
+    sources:
+    - https://github.com/grafana/loki
+    urls:
+    - https://datacore-tilangovan.github.io/test-pro-chart/charts/loki-stack-2.9.11.tgz
+    version: 2.9.11
+  mayastor:
+  - apiVersion: v2
+    appVersion: 0.0.0
+    created: "2024-02-28T11:19:33.476949911Z"
+    dependencies:
+    - name: etcd
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.6.0
+    - condition: base.jaeger.enabled
+      name: jaeger-operator
+      repository: https://jaegertracing.github.io/helm-charts
+      version: 2.25.0
+    - condition: loki-stack.enabled
+      name: loki-stack
+      repository: https://grafana.github.io/helm-charts
+      version: 2.9.11
+    - condition: eventing.enabled
+      name: nats
+      repository: https://nats-io.github.io/k8s/helm/charts/
+      version: 0.19.14
+    - condition: localpv-provisioner.enabled
+      name: localpv-provisioner
+      repository: https://openebs.github.io/dynamic-localpv-provisioner
+      version: 3.5.0
+    description: Mayastor Helm chart for Kubernetes
+    digest: 2ee896f28d703f3e52fc8cd856be30a0ccd3318367cea2cba16dc82b6612d170
+    name: mayastor
+    type: application
+    urls:
+    - https://datacore-tilangovan.github.io/test-pro-chart/mayastor-0.0.0.tgz
+    version: 0.0.0
+  nats:
+  - apiVersion: v2
+    appVersion: 2.9.17
+    created: "2024-02-28T11:19:33.505535679Z"
+    description: A Helm chart for the NATS.io High Speed Cloud Native Distributed
+      Communications Technology.
+    digest: 7eec2a9bc1fc681d77c9b0f59ab2ad3b0312058f6635ebf0a28bde1f2d02bfce
+    home: http://github.com/nats-io/k8s
+    icon: https://nats.io/img/nats-icon-color.png
+    keywords:
+    - nats
+    - messaging
+    - cncf
+    maintainers:
+    - email: info@nats.io
+      name: The NATS Authors
+      url: https://github.com/nats-io
+    name: nats
+    urls:
+    - https://datacore-tilangovan.github.io/test-pro-chart/charts/nats-0.19.14.tgz
+    version: 0.19.14
+generated: "2024-02-28T11:19:33.446739929Z"
