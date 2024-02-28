@@ -5,7 +5,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 3.5.6
-    created: "2024-02-28T11:19:33.480910007Z"
+    created: "2024-02-28T11:34:33.137150675Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -32,12 +32,12 @@ entries:
     - https://github.com/bitnami/containers/tree/main/bitnami/etcd
     - https://coreos.com/etcd/
     urls:
-    - https://datacore-tilangovan.github.io/test-pro-chart/charts/etcd-8.6.0.tgz
+    - https://datacore-tilangovan.github.io/mayastor-extensions/charts/etcd-8.6.0.tgz
     version: 8.6.0
   jaeger-operator:
   - apiVersion: v1
     appVersion: 1.24.0
-    created: "2024-02-28T11:19:33.481603084Z"
+    created: "2024-02-28T11:34:33.137849616Z"
     description: jaeger-operator Helm chart for Kubernetes
     digest: 1880c0da62b475d22ee2bd2b5bf0565abfa9d3546797a52376e72817f753165e
     home: https://www.jaegertracing.io/
@@ -51,12 +51,12 @@ entries:
     sources:
     - https://github.com/jaegertracing/jaeger-operator
     urls:
-    - https://datacore-tilangovan.github.io/test-pro-chart/charts/jaeger-operator-2.25.0.tgz
+    - https://datacore-tilangovan.github.io/mayastor-extensions/charts/jaeger-operator-2.25.0.tgz
     version: 2.25.0
   localpv-provisioner:
   - apiVersion: v2
     appVersion: 3.5.0
-    created: "2024-02-28T11:19:33.484684084Z"
+    created: "2024-02-28T11:34:33.141136505Z"
     dependencies:
     - condition: openebsNDM.enabled
       name: openebs-ndm
@@ -83,12 +83,12 @@ entries:
     - https://github.com/openebs/dynamic-localpv-provisioner
     type: application
     urls:
-    - https://datacore-tilangovan.github.io/test-pro-chart/charts/localpv-provisioner-3.5.0.tgz
+    - https://datacore-tilangovan.github.io/mayastor-extensions/charts/localpv-provisioner-3.5.0.tgz
     version: 3.5.0
   loki-stack:
   - apiVersion: v1
     appVersion: v2.6.1
-    created: "2024-02-28T11:19:33.503293289Z"
+    created: "2024-02-28T11:34:33.159438819Z"
     dependencies:
     - condition: loki.enabled
       name: loki
@@ -130,12 +130,12 @@ entries:
     sources:
     - https://github.com/grafana/loki
     urls:
-    - https://datacore-tilangovan.github.io/test-pro-chart/charts/loki-stack-2.9.11.tgz
+    - https://datacore-tilangovan.github.io/mayastor-extensions/charts/loki-stack-2.9.11.tgz
     version: 2.9.11
   mayastor:
   - apiVersion: v2
     appVersion: 0.0.0
-    created: "2024-02-28T11:19:33.476949911Z"
+    created: "2024-02-28T11:34:33.133247837Z"
     dependencies:
     - name: etcd
       repository: https://charts.bitnami.com/bitnami
@@ -161,12 +161,12 @@ entries:
     name: mayastor
     type: application
     urls:
-    - https://datacore-tilangovan.github.io/test-pro-chart/mayastor-0.0.0.tgz
+    - https://datacore-tilangovan.github.io/mayastor-extensions/mayastor-0.0.0.tgz
     version: 0.0.0
   nats:
   - apiVersion: v2
     appVersion: 2.9.17
-    created: "2024-02-28T11:19:33.505535679Z"
+    created: "2024-02-28T11:34:33.161710032Z"
     description: A Helm chart for the NATS.io High Speed Cloud Native Distributed
       Communications Technology.
     digest: 7eec2a9bc1fc681d77c9b0f59ab2ad3b0312058f6635ebf0a28bde1f2d02bfce
@@ -182,6 +182,6 @@ entries:
       url: https://github.com/nats-io
     name: nats
     urls:
-    - https://datacore-tilangovan.github.io/test-pro-chart/charts/nats-0.19.14.tgz
+    - https://datacore-tilangovan.github.io/mayastor-extensions/charts/nats-0.19.14.tgz
     version: 0.19.14
-generated: "2024-02-28T11:19:33.446739929Z"
+generated: "2024-02-28T11:34:33.102498662Z"
